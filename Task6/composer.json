@@ -1,0 +1,7 @@
+{
+    "require": {
+        "ext-curl":"*",
+        "curl/curl": "^2.1",
+        "setasign/fpdf": "^1.8"
+    }
+}
