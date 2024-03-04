@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple PHP Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<h3>Simple PHP Form</h3>
+<p>Provide only Alphabets and name,surname shouldn't exceed 20 letters:</p>
+<form action="Form.php" method="post" enctype="multipart/form-data">
+    <!-- Taking input from the user. -->   
+    <label for="first_name">First name:</label>
+    <input type="text" id="first_name" name="f_name" pattern="^[A-Za-z]{1,20}$" required oninput="fullName()">
+    <label for="last_name">Last name:</label>
+    <input type="text" id="last_name" name="l_name" pattern="^[A-Za-z]{1,20}$" required oninput="fullName()">
+    <label for="image">Upload Image:</label>
+    <input type="file" name="image" id="image" accept="image/*" >
+    <label for="subject_marks">Subject Marks (Format: Subject|Marks):</label>
+    <textarea id="subject_marks" name="subject_marks" rows="5" ></textarea>
+    <label for="ph_number">Ph Number:</label>
+    <input type="tel" id="ph_number" name="phone_number" pattern="\+91[0-9]{1,10}">
+    <!-- Printing the name. -->
+    <label for="full_name">Full name:</label>
+    <input type="text" id="full_name" readonly>
+    <input type="submit" value="Submit">
+</form>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>
