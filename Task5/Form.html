@@ -16,6 +16,10 @@
     <input type="text" id="first_name" name="f_name" pattern="^[A-Za-z]{1,20}$" required oninput="fullName()">
     <label for="last_name">Last name:</label>
     <input type="text" id="last_name" name="l_name" pattern="^[A-Za-z]{1,20}$" required oninput="fullName()">
+    <!-- Printing the name. -->
+    <label for="full_name">Full name:</label>
+    <input type="text" id="full_name" readonly>
+    
     <label for="image">Upload Image:</label>
     <input type="file" name="image" id="image" accept="image/*" >
     <label for="subject_marks">Subject Marks (Format: Subject|Marks):</label>
@@ -24,9 +28,6 @@
     <input type="tel" id="ph_number" name="phone_number" pattern="\+91[0-9]{1,10}">
     <label for="email_id">Email ID:</label>
     <input type="text" id="email_id" name="email_id">
-    <!-- Printing the name. -->
-    <label for="full_name">Full name:</label>
-    <input type="text" id="full_name" readonly>
     <input type="submit" value="Submit">
 </form>
 
