@@ -1,8 +1,9 @@
 <?php
+
 session_start();
-$flag = 0;
+
 if (isset($_SESSION["user_name"])) {
-    require('homepage.php');
+    header('Location: homepage.php');
     exit();
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = 123;
         if ($username == $_POST['user_name'] && $password == $_POST['pass']) {
             $_SESSION["user_name"] = $username;
-            $flag = 1;
-            require('homepage.php');
+            header('Location: question4.php');
             exit();
         }
     }
@@ -42,19 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit" name="login">Login</button>
         </form>
-
-        <?php
-        if (isset($_POST['login'])) {
-            if (!$flag) {
-        ?>
-                <p class="error">
-                    INVALID USERNAME OR PASSWORD
-                </p>
-        <?php
-            }
-        }
-        ?>
     </div>
 </body>
-
 </html>

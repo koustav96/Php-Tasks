@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (!isset($_SESSION["user_name"])) {
     header("location: login.php");
@@ -21,21 +22,10 @@ if (!isset($_SESSION["user_name"])) {
         <h1>Question 5</h1>
         <p>Add a new single text field to the above form that will accept email id. Do not use email id input field type.</p>
 
-        <?php if (isset($_SESSION["user_name"])) : ?>
-            <div class="button">
-                <button onclick="location.href='homepage.php'">HomePage</button>
-            </div>
-        <?php else : ?>
-        <?php
-            // If session is not present, redirect to login.php
-            header("location: login.php");
-            exit();
-        endif;
-        ?>
         <div class="button">
+            <a href="homepage.php">HomePage</a>
             <a href="logout.php">Log Out</a>
         </div>
     </div>
 </body>
-
 </html>
